@@ -8,8 +8,23 @@ const { Screen, Navigator } = createNativeStackNavigator();
 export function StackRoutes() {
   return (
     <Navigator>
-      <Screen name="screenA" component={ScreenA} />
-      <Screen name="screenB" component={ScreenB} />
+      <Screen
+        name="screenA"
+        options={{ headerShown: false }}
+        component={ScreenA}
+      />
+      <Screen
+        name="screenB"
+        component={ScreenB}
+        options={{
+          title: "Tela B",
+          headerTitleAlign: "center",
+          headerStyle: {
+            backgroundColor: "navy",
+          },
+          headerTintColor: "#FFF",
+        }}
+      />
     </Navigator>
   );
 }
